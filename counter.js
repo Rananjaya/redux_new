@@ -1,12 +1,28 @@
-import React from 'react';
-import {View,Text,StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {View,Text,StyleSheet,Button} from 'react-native';
 
-const Counter = () =>(
+const Counter = (props) =>{
+
+    const [counter, setCounter] = useState(0); 
+
+    const addtion_hadelr = ()=>{
+
+        setCounter(counter + 1);
+    }
+
+    const sub = ()=>{
+
+        setCounter(counter - 1);
+    }
  
-    <View style={{flex :1,justifyContent : "center",alignItems:"center"}}>
-        <Text>123</Text>
+    return(
+        <View style={{flex :1,justifyContent : "center",alignItems:"center"}}>
+        <Button title="Add" onPress={()=> addtion_hadelr()}/>
+            <Text>{counter}</Text>
+        <Button title="subtract" onPress={() => sub()}/>
     </View>
+    );
 
-);
+}
 
 export default Counter;
