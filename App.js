@@ -1,9 +1,14 @@
 import React from 'react';
-import Counter from './counter';
+import {Provider} from 'react-redux';
 
+import Counter from './counter';
+import {store} from './src/store/store';
 const App = props =>{
   return(
-    <Counter/>
+    <Provider store={store}>
+         <Counter/>
+    </Provider>
+   
   )
 }
 
